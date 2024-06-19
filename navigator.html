@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigator Object</title>
+    <script>
+      function display_browser() {
+        document.write("Browser name:" + navigator.appName + "<br>");
+        document.write("Browser version: " + navigator.appVersion + "<br>");
+        document.write(
+          "Browser language: " + navigator.browserLangauge + "<br/>"
+        );
+        document.write("Platform:" + navigator.platform + "<br/>");
+        if (navigator.cookieEnabled) {
+          document.write("Cookie is enabled in the browser");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="display_browser()">Display Browser Information</button>
+  </body>
+</html>

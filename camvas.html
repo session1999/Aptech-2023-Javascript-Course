@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <!-- <style>
+      Canvas {
+        border: medium double red;
+        margin: 4px;
+      }
+    </style> -->
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById("mCanvas");
+        var ctext = canvas.getContext("2d");
+        ctext.beginPath();
+        ctext.rect(18, 50, 200, 100);
+        ctext.fillStyle = "DarkBlue";
+        ctext.fill();
+      };
+    </script>
+  </head>
+  <body>
+    <canvas id="mCanvas" width="278" height="200"></canvas>
+  </body>
+</html>

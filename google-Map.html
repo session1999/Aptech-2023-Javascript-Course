@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Load and initialize Google Maps</title>
+  </head>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 10%;
+    }
+    #map_canvas {
+      height: 50%;
+      width: 50%;
+    }
+  </style>
+
+  <script
+    type="text/javascript"
+    src="https://maps.google.com/maps/api/js?sensor=false"
+  ></script>
+
+  <script>
+    function initialize() {
+      //loading Google Maps
+      let num = new google.maps.LatLng(6.4472619, 3.4718625);
+
+      let myOptions = {
+        zoom: 16,
+        center: num,
+        mapTypeId: google.maps.MapTypeId.HYBRID,
+      };
+
+      let mymap = new google.maps.Map(
+        document.getElementById("map_canvas"),
+        myOptions
+      );
+
+      let marker = new google.maps.Marker({
+        position: num,
+        map: mymap,
+        title: "LandMark Beach Lagos!",
+      });
+    }
+  </script>
+
+  <body onload="initialize()">
+    <div id="map_canvas"></div>
+  </body>
+</html>

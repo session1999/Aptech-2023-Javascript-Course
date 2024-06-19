@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handing error</title>
+
+    <script>
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          navigator.geolocation.getCurrentPosition(errorHandler);
+        }
+
+        function showPosition(position) {
+          alert(
+            "Latitude:" +
+              position.coords.latitude +
+              "\n" +
+              "Longtitude: " +
+              position.coords.longitude
+          );
+        }
+      }
+
+      function errorHandler(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            alert("you have denied access to your positiobn.");
+            break;
+          case error.PERMISSION_UNAVAILABE:
+            alert(" There was a problem getting your position ");
+            break;
+          case error.TIMEOUT:
+            alert(
+              "The application has timed out attempting to get your position"
+            );
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="Display Location" onclick="getLocation()" />
+  </body>
+</html>
